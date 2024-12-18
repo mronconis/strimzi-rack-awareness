@@ -1,0 +1,30 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+  labels:
+    topology.kubernetes.io/zone: az1
+    dedicated: kafka
+- role: worker
+  labels:
+    topology.kubernetes.io/zone: az2
+    dedicated: kafka
+- role: worker
+  labels:
+    topology.kubernetes.io/zone: az3
+    dedicated: kafka
+- role: worker
+  labels:
+    topology.kubernetes.io/zone: az1
+    dedicated: zookeeper
+- role: worker
+  labels:
+    topology.kubernetes.io/zone: az2
+    dedicated: zookeeper
+- role: worker
+  labels:
+    topology.kubernetes.io/zone: az3
+    dedicated: zookeeper
+- role: worker
+
